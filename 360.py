@@ -478,61 +478,10 @@ def brute():
                     print '\x1b[1;91m[!] Connection Error'
                     time.sleep(1)
 
-        except IOError:
-            print '\x1b[1;91m[!] File not found...'
-            print """\n\x1b[1;91m[!] \x1b[1;92mLooks like you don't have a wordlist"""
-            super()
-
-	
-def menu_react():
-    os.system('clear')
-    try:
-        toket = open('login.txt', 'r').read()
-    except IOError:
-        print '\x1b[1;91m[!] Token ar value ses hoice'
-        os.system('rm -rf login.txt')
-        time.sleep(1)
-        login()
-
-    os.system('clear')
-    print logo()
-    print 40 * '\x1b[1;97m\xe2\x95\x90'
-    print '\x1b[1;37;40m1. \x1b[1;97mLike'
-    print '\x1b[1;37;40m2. \x1b[1;97mLove'
-    print '\x1b[1;37;40m3. \x1b[1;97mWow'
-    print '\x1b[1;37;40m4. \x1b[1;97mHaha'
-    print '\x1b[1;37;40m5. \x1b[1;97mSed'
-    print '\x1b[1;37;40m6. \x1b[1;97mAngry'
-    print '\x1b[1;31;40m0. Back '
-    print
-    react_pilih()
-
-
-def react_pilih():
-    global tipe
-    aksi = raw_input('\x1b[1;91m-\xe2\x96\xba\x1b[1;97m ')
-    if aksi == '':
-        print '\x1b[1;91m[!] Vul input'
-        react_pilih()
-    else:
-        if aksi == '1':
-            tipe = 'LIKE'
-            react()
-        else:
-            if aksi == '2':
-                tipe = 'LOVE'
-                react()
-            else:
-                if aksi == '3':
-                    tipe = 'WOW'
-                    react()
-                else:
-                    if aksi == '4':
-                        tipe = 'HAHA'
-                        react()
-                    else:
+        pe'
+    pr
                         if aksi == '5':
-                            tipe = 'SAD'
+                            ti = 'SAD'
                             react()
                         else:
                             if aksi == '6':
@@ -546,141 +495,14 @@ def react_pilih():
                                     react_pilih()
 
 
-def react():
-    os.system('clear')
-    try:
-        toket = open('login.txt', 'r').read()
-    except IOError:
-        print '\x1b[1;91m[!] Token ar  value ses hoice'
-        os.system('rm -rf login.txt')
-        time.sleep(1)
-        login()
-    else:
-        os.system('clear')
-        print logo()
-        print 40 * '\x1b[1;97m\xe2\x95\x90'
-        ide = raw_input('\x1b[1;91m[+] \x1b[1;92m Target ID \x1b[1;91m:\x1b[1;97m ')
-        limit = raw_input('\x1b[1;91m[!] \x1b[1;92mLimit \x1b[1;91m:\x1b[1;97m ')
-        try:
-            oh = requests.get('https://graph.facebook.com/' + ide + '?fields=feed.limit(' + limit + ')&access_token=' + toket)
-            ah = json.loads(oh.text)
-            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mSending\x1b[1;97m...')
-            print 40 * '\x1b[1;97m\xe2\x95\x90'
-            for a in ah['feed']['data']:
-                y = a['id']
-                reaksi.append(y)
-                requests.post('https://graph.facebook.com/' + y + '/reactions?type=' + tipe + '&access_token=' + toket)
-                print '\x1b[1;92m[\x1b[1;97m' + y[:10].replace('\n', ' ') + '... \x1b[1;92m] \x1b[1;97m' + tipe
 
-            print
-            print '\r\x1b[1;91m[+]\x1b[1;97m Done  \x1b[1;96m' + str(len(reaksi))
-            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
-            menu_bot()
-        except KeyError:
-            print '\x1b[1;91m[!] ID Not Found'
-            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
-            menu_bot()
+   
+  
+ 
 
 
-def grup_react():
-    os.system('clear')
-    try:
-        toket = open('login.txt', 'r').read()
-    except IOError:
-        print '\x1b[1;91m[!] Token ar value ses'
-        os.system('rm -rf login.txt')
-        time.sleep(1)
-        login()
-
-    os.system('clear')
-    print logo()
-    print 40 * '\x1b[1;97m\xe2\x95\x90'
-    print '\x1b[1;37;40m1. \x1b[1;97mLike'
-    print '\x1b[1;37;40m2. \x1b[1;97mLove'
-    print '\x1b[1;37;40m3. \x1b[1;97mWow'
-    print '\x1b[1;37;40m4. \x1b[1;97mHaha'
-    print '\x1b[1;37;40m5. \x1b[1;97mSed'
-    print '\x1b[1;37;40m6. \x1b[1;97mAngry'
-    print '\x1b[1;31;40m0. Back'
-    print
-    reactg_pilih()
 
 
-def reactg_pilih():
-    global tipe
-    aksi = raw_input('\x1b[1;91m-\xe2\x96\xba\x1b[1;97m ')
-    if aksi == '':
-        print '\x1b[1;91m[!] Vul input'
-        reactg_pilih()
-    else:
-        if aksi == '1':
-            tipe = 'LIKE'
-            reactg()
-        else:
-            if aksi == '2':
-                tipe = 'LOVE'
-                reactg()
-            else:
-                if aksi == '3':
-                    tipe = 'WOW'
-                    reactg()
-                else:
-                    if aksi == '4':
-                        tipe = 'HAHA'
-                        reactg()
-                    else:
-                        if aksi == '5':
-                            tipe = 'SAD'
-                            reactg()
-                        else:
-                            if aksi == '6':
-                                tipe = 'ANGRY'
-                                reactg()
-                            else:
-                                if aksi == '0':
-                                    menu_bot()
-                                else:
-                                    print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + aksi + ' vul input'
-                                    reactg_pilih()
-
-
-def reactg():
-    os.system('clear')
-    try:
-        toket = open('login.txt', 'r').read()
-    except IOError:
-        print '\x1b[1;91m[!] Token ar vlue ses hoice'
-        os.system('rm -rf login.txt')
-        time.sleep(1)
-        login()
-    else:
-        os.system('clear')
-        print logo()
-        print 40 * '\x1b[1;97m\xe2\x95\x90'
-        ide = raw_input('\x1b[1;91m[+] \x1b[1;92mGroup ID \x1b[1;91m:\x1b[1;97m ')
-        limit = raw_input('\x1b[1;91m[!] \x1b[1;92mLimit \x1b[1;91m:\x1b[1;97m ')
-        ah = requests.get('https://graph.facebook.com/group/?id=' + ide + '&access_token=' + toket)
-        asw = json.loads(ah.text)
-        print '\x1b[1;91m[\x1b[1;96m\xe2\x9c\x93\x1b[1;91m] \x1b[1;92mGroup Name \x1b[1;91m:\x1b[1;97m ' + asw['name']
-        try:
-            oh = requests.get('https://graph.facebook.com/v3.0/' + ide + '?fields=feed.limit(' + limit + ')&access_token=' + toket)
-            ah = json.loads(oh.text)
-            jalan('\x1b[1;91m[\xe2\x9c\xba] \x1b[1;92mSending \x1b[1;97m...')
-            print 40 * '\x1b[1;97m\xe2\x95\x90'
-            for a in ah['feed']['data']:
-                y = a['id']
-                reaksigrup.append(y)
-                requests.post('https://graph.facebook.com/' + y + '/reactions?type=' + tipe + '&access_token=' + toket)
-                print '\x1b[1;92m[\x1b[1;97m' + y[:10].replace('\n', ' ') + '... \x1b[1;92m] \x1b[1;97m' + tipe
-
-            print
-            print '\r\x1b[1;91m[+]\x1b[1;97m Selesai \x1b[1;96m' + str(len(reaksigrup))
-            raw_input('\n\x1b[1;91m[ \x1b[1;97mKembali \x1b[1;91m]')
-            menu_bot()
-        except KeyError:
-            print '\x1b[1;91m[!] Group ID not found'
-            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
-            menu_bot()
 
 
 if __name__ == '__main__':
