@@ -477,23 +477,8 @@ def brute():
                 except requests.exceptions.ConnectionError:
                     print '\x1b[1;91m[!] Connection Error'
                     time.sleep(1)
-
-        pe'
-    pr
-                        if aksi == '5':
-                            ti = 'SAD'
-                            react()
-                        else:
-                            if aksi == '6':
-                                tipe = 'ANGRY'
-                                react()
-                            else:
-                                if aksi == '0':
-                                    menu_bot()
-                                else:
-                                    print '\x1b[1;91m[\xe2\x9c\x96] \x1b[1;97m' + aksi + ' \x1b[1;91mVul Input'
-                                    react_pilih()
-
+                    
+                                
 
 
    
